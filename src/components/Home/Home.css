@@ -16,19 +16,17 @@
 .home__social-icon {
   font-size: 1.25rem;
   color: var(--title-color);
+  transition: all 0.4s ease-in-out;
 }
 .home__social-icon:hover {
-  color: var(--title-color-dark);
+  color: var(--text-color);
 }
 
 .home__title {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-0-25);
 }
-.home__hand {
-  font-size: calc(var(--big-font-size) - var(--h3-font-size));
-  margin-left: 0.5rem;
-}
+
 .home__subtitle {
   position: relative;
   font-size: var(--h3-font-size);
@@ -78,6 +76,7 @@
   margin-left: 9.25rem;
 }
 .home__send {
+  transition: all 0.3s ease-in-out;
   color: var(--container-color);
   margin-left: 0.4rem;
   line-height: 1.4rem;
