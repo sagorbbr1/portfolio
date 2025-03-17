@@ -33,6 +33,7 @@
   padding-left: 5.4rem;
   font-weight: var(--font-normal);
   margin-bottom: var(--mb-1);
+  animation: fadeSlideUp 1s ease-out forwards;
 }
 .home__subtitle::before {
   content: "";
@@ -46,6 +47,7 @@
 .home__description {
   max-width: 400px;
   margin-bottom: var(--mb-3);
+  animation: fadeSlideUp 1s ease-out forwards;
 }
 .home__img {
   background: url("https://i.postimg.cc/fWJ2fvTt/md-sagor-ali.jpg");
@@ -110,6 +112,58 @@
 
 .home__scroll-mouse {
   margin-top: 2rem !important;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.home__title {
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-0-25);
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--title-color);
+  display: inline-block !important;
+  width: auto;
+  max-width: fit-content;
+  animation: typing 3s steps(30, end) forwards, blink 0.8s step-end infinite;
+}
+
+.home__title.typed {
+  border-right: none;
+}
+
+.home__title::after {
+  content: "";
+  display: inline-block;
+  font-weight: bold;
+  animation: blink 0.8s step-end infinite;
+}
+
+.home__title.typed::after {
+  display: none;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* BreakPoints */

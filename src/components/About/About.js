@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 
-import CV from "../../assets/sagor-cv.pdf";
+import CV from "../../assets/md-sagor.pdf";
 import Info from "./Info";
 function About() {
   return (
@@ -20,9 +20,11 @@ function About() {
           <Info />
 
           <p className="about__description">
-            As a Front-end developer, I create web pages using HTML, CSS,
-            Bootstrap and React Js. I have 2 years of experience and many
-            clients are happy with the projects carried out.
+            As a MERN Stack Developer, I build dynamic web applications using
+            MongoDB, Express.js, React.js, and Node.js. With 4 years of coding
+            experience, I create scalable back-end systems and interactive
+            front-end interfaces, delivering high-quality projects that clients
+            are happy with
           </p>
 
           <a download="" href={CV} className="button button--flex">
