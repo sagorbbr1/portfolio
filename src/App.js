@@ -1,35 +1,21 @@
-import React, { Fragment } from 'react'
-import './App.css';
-import About from './components/About/About';
-import Header from './components/Header/Header';
-import Skills from './components/Skills/Skills';
-import Home from './components/Home/Home';
-import Services from './components/Services/Services';
-import Certification from './components/Certification/Certification';
-import Testimonials from './components/Testimonials/Testimonials';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-import ScrollUp from './components/ScrolUp/ScrollUp';
-import Portfolio from './components/Portfolio/Portfolio';
+import React, { Fragment } from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Admin from "./components/Admin/Admin";
+import HomePage from "./components/HomePage/HomePage";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
     <Fragment>
-      <Header />
-
-      <main className='main'>
-        <Home />
-        <About />
-        <Skills />
-        <Services />
-       <Certification />
-       <Portfolio />
-       <Testimonials />
-       <Contact />
-      </main>
-       <Footer />
-       <ScrollUp />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </Fragment>
   );
 }

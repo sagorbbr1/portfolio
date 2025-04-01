@@ -59,7 +59,6 @@
   transition: 0.3s;
 }
 .services__modal-content {
-  width: 500px;
   position: relative;
   background-color: var(--container-color);
   padding: 4.5rem 2.5rem 2.5rem;
