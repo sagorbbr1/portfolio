@@ -1,10 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Projects = () => {
+  const fileInputRef = useRef(null);
   const [projectTitle, setProjectTitle] = useState("");
   const [projectCat, setProjectCat] = useState("");
   const [projectLink, setProjectLink] = useState("");
   const [projectImage, setProjectImage] = useState();
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const res = await fetch("http://localhost:5000/api/get-projects");
+      const data = await res.json();
+      console.log(data);
+    };
+    fetchProjects();
+  }, []);
+
   const handleSubmitProject = () => {
     const formData = new FormData();
     formData.append("projectTitle", projectTitle);
@@ -19,7 +30,11 @@ const Projects = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        alert("Project created successfully");
+        setProjectTitle("");
+        setProjectCat("");
+        setProjectLink("");
+        fileInputRef.current.value = "";
       })
       .catch((err) => console.log(err));
   };
@@ -58,6 +73,7 @@ const Projects = () => {
       <input
         onChange={(e) => setProjectImage(e.target.files[0])}
         className="input"
+        ref={fileInputRef}
         type="file"
         name="p-dp"
         id="p-dp"
